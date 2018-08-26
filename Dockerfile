@@ -1,10 +1,19 @@
 FROM node:8.9-alpine
-ENV NODE_ENV production
+
+# set working directory
+RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
-COPY ["webapp/angular.json","webapp/package.json", "webapp/package-lock.json*", "webapp/npm-shrinkwrap.json*", "./"]
-RUN npm install --production --silent && mv node_modules ../
+
+# add `/usr/src/app/node_modules/.bin` to $PATH
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+# install and cache app dependencies
+COPY package.json /usr/src/app/package.json
 RUN npm install npm@latest -g
 RUN npm install -g @angular/cli@latest
-COPY . .
-EXPOSE 4200
-CMD npm start
+
+# add app
+COPY . /usr/src/app
+
+# start app
+CMD ng serve --host 0.0.0.0
