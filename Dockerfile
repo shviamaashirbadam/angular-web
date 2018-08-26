@@ -1,7 +1,7 @@
 FROM node:8.9-alpine
 
 # set working directory
-RUN mkdir /usr/src/app
+RUN sudo mkdir /usr/src/app
 WORKDIR /usr/src/app
 
 # add `/usr/src/app/node_modules/.bin` to $PATH
