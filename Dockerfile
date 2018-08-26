@@ -29,7 +29,7 @@ COPY webapp/package*.json ./
 
 RUN npm install npm@latest -g
 RUN npm install -g @angular/cli@v6.0.3
-RUN ng update @angular/cli --migrate-only
+RUN ng update @angular/cli --migrate-only --from=1.7.4
 
 # If you are building your code for production
 # RUN npm install --only=production
