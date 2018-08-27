@@ -36,4 +36,4 @@ RUN npm install npm@v6.1.0
 COPY . .
 
 EXPOSE 4200
-CMD ng serve --host 0.0.0.0
+CMD [ "npm", "start" ]
