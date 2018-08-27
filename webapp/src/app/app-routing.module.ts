@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import {JavaComponent} from './components/java/java.component'
+import {NavbarComponent} from './components/navbar/navbar.component'
 
 
 export const routes: Routes = [
-  { path: 'Java', component: JavaComponent }
+  { path: 'Navbar', component: NavbarComponent },
+  { path: 'java', component: JavaComponent }
 ]
 @NgModule({
   exports: [
