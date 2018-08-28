@@ -28,7 +28,7 @@ WORKDIR /usr/src/app
 COPY webapp/package*.json ./
 
 RUN npm install npm@v6.1.0
-RUN npm install -g @angular/cli@v6
+RUN npm install -g @angular/cli@v6.0.8
 # If you are building your code for production
 # RUN npm install --only=production
 
