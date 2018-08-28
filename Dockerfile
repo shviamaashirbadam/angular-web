@@ -36,4 +36,4 @@ RUN npm install -g @angular/cli@v6.0.8
 COPY . .
 
 EXPOSE 4200
-CMD ng serve --proxy-config proxy.conf.json --open --aot
+CMD ng serve  --open 
